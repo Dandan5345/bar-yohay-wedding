@@ -13,7 +13,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@400;600;700;900&family=Bodoni+Moda:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -41,7 +41,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1050px;
       margin: 0 auto;
     }
 
@@ -73,11 +73,11 @@
       margin: 0 auto;
     }
 
-    /* GRID OF 2 SELECTED DESIGNS */
+    /* GRID OF 3 SELECTED DESIGNS */
     .designs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 36px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
       margin-bottom: 60px;
     }
 
@@ -101,7 +101,7 @@
     }
 
     .card-thumb {
-      height: 280px;
+      height: 260px;
       overflow: hidden;
       position: relative;
       background: #F0E6D8;
@@ -134,7 +134,7 @@
     }
 
     .card-body {
-      padding: 28px;
+      padding: 24px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -143,17 +143,17 @@
 
     .card-title {
       font-family: var(--font-serif);
-      font-size: 1.65rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: var(--text-dark);
       margin-bottom: 10px;
     }
 
     .card-desc {
-      font-size: 1rem;
+      font-size: 0.98rem;
       color: var(--text-muted);
       margin-bottom: 24px;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .btn-preview {
@@ -168,7 +168,7 @@
       border-radius: 50px;
       transition: background 0.3s ease;
       text-align: center;
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     .design-card:hover .btn-preview {
@@ -219,8 +219,23 @@
         </div>
         <div class="card-body">
           <div>
-            <h3 class="card-title">2. אדיטוריאלי מודרני (Vogue)</h3>
-            <p class="card-desc">סגנון נקי, מינימליסטי ויוקרתי בסגנון מגזין אופנה (Vogue) המציג את תמונת הזוג בשער יוקרתי.</p>
+            <h3 class="card-title">2. אדיטוריאלי מודרני</h3>
+            <p class="card-desc">סגנון נקי, מינימליסטי ויוקרתי בסגנון מגזין יוקרתי המציג את תמונת הזוג בשער מרשים.</p>
+          </div>
+          <div class="btn-preview">צפייה בהזמנה ➔</div>
+        </div>
+      </a>
+
+      <!-- Design 7: Jerusalem Vineyard -->
+      <a href="design-vineyard.html" class="design-card">
+        <div class="card-thumb">
+          <span class="tag-badge">🍇 כרם וגפנים</span>
+          <img src="vineyard_art.png" alt="עיצוב כרם וגפנים" />
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">3. כרם וגפנים בהרי ירושלים</h3>
+            <p class="card-desc">עיצוב פסטורלי עם טפט רקע מרהיב של כרם גפנים ועצי זית בהרי ירושלים ותמונת הזוג האמיתית.</p>
           </div>
           <div class="btn-preview">צפייה בהזמנה ➔</div>
         </div>
