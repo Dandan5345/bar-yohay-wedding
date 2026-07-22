@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>בר & יוחאי — בוהו שיק וטבע</title>
+
+  <!-- Meta tags -->
+  <meta name="description" content="הזמנה לחתונה של בר ויטל ויוחאי בוגנים - 30/11/26 באולמי יהודה צומת כנות" />
+  <meta property="og:image" content="boho_art.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-boho: #FAF5F0;
+      --text-dark: #2B231D;
+      --text-muted: #78695C;
+      --boho-terracotta: #C47B5D;
+      --font-serif: 'Frank Ruhl Libre', serif;
+      --font-sans: 'Assistant', sans-serif;
+      --font-en: 'Playfair Display', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background-color: var(--bg-boho); color: var(--text-dark); line-height: 1.8; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+    .top-back-bar {
+      background: rgba(250, 245, 240, 0.95); backdrop-filter: blur(10px);
+      padding: 12px 20px; text-align: center; border-bottom: 1px solid rgba(196, 123, 93, 0.25);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .back-link { color: var(--boho-terracotta); text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+
+    #entrance-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: linear-gradient(135deg, rgba(250, 245, 240, 0.95) 0%, rgba(245, 232, 222, 0.95) 100%),
+                  url('boho_art.png') center/cover no-repeat;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px;
+      transition: opacity 1s ease, visibility 1s;
+    }
+    #entrance-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    .cover-card {
+      background: #FFFFFF; border: 2px solid var(--boho-terracotta); border-radius: 24px; padding: 48px 32px;
+      box-shadow: 0 20px 40px rgba(196, 123, 93, 0.18); max-width: 440px; width: 100%;
+    }
+    .cover-title { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+    .cover-sub { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; }
+    .cover-btn { background: var(--boho-terracotta); color: #FFF; font-size: 1.15rem; font-weight: 700; padding: 16px 36px; border-radius: 50px; border: none; cursor: pointer; width: 100%; box-shadow: 0 10px 20px rgba(196, 123, 93, 0.3); }
+
+    .audio-btn {
+      position: fixed; bottom: 24px; left: 24px; z-index: 900;
+      background: #FFFFFF; border: 1px solid var(--boho-terracotta); border-radius: 50px; padding: 10px 20px;
+      display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 600; color: var(--text-dark);
+    }
+    .sound-bars { display: flex; align-items: flex-end; gap: 3px; height: 14px; }
+    .sound-bar { width: 2px; background: var(--boho-terracotta); animation: soundWave 1.2s infinite alternate; }
+    .audio-btn.muted .sound-bar { animation: none; height: 20% !important; }
+
+    #yt-player-container { position: absolute; top: -9999px; left: -9999px; }
+
+    .hero { padding: 60px 0 40px; text-align: center; }
+    .boho-header-art {
+      max-width: 600px; margin: 0 auto 30px; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 4px solid #FFFFFF;
+    }
+    .boho-header-art img { width: 100%; height: 380px; object-fit: cover; display: block; }
+
+    .couple-portrait-wrapper {
+      max-width: 440px; margin: 20px auto 30px; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 4px solid #FFFFFF;
+    }
+    .couple-portrait-wrapper img { width: 100%; height: 480px; object-fit: cover; object-position: center 20%; display: block; }
+
+    .hero-names-en { font-family: var(--font-en); font-size: clamp(3rem, 7vw, 5rem); color: var(--boho-terracotta); margin-bottom: 6px; }
+    .hero-names-he { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; color: var(--text-dark); margin-bottom: 24px; }
+
+    .invitation { text-align: center; padding: 40px 0; }
+    .verse { font-family: var(--font-serif); font-size: 1.3rem; color: var(--text-dark); margin-bottom: 36px; line-height: 1.9; }
+
+    /* PARENTS - LINE BREAK ON FAMILY NAMES */
+    .parents-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; padding: 20px 0;
+      border-top: 1px solid rgba(196, 123, 93, 0.25); border-bottom: 1px solid rgba(196, 123, 93, 0.25);
+    }
+    .parent-box h4 { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 4px; }
+    .parent-box p { font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; color: var(--text-dark); line-height: 1.3; }
+
+    .details-box {
+      background: #FFFFFF; border-radius: 20px; padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid rgba(196, 123, 93, 0.2); margin-bottom: 40px;
+    }
+    .detail-item { margin-bottom: 20px; }
+    .detail-item:last-child { margin-bottom: 0; }
+    .detail-title { font-size: 0.9rem; color: var(--boho-terracotta); font-weight: 700; }
+    .detail-val { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; }
+
+    .actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .btn-act { padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+    .btn-waze { background: #33CCFF; color: #000; }
+    .btn-maps { background: #4285F4; color: #FFF; }
+    .btn-cal { background: var(--boho-terracotta); color: #FFF; }
+
+    .countdown { text-align: center; padding: 50px 0; }
+    .countdown-grid { display: flex; justify-content: center; gap: 20px; margin-top: 24px; }
+    .timer-card { background: #FFF; border: 1px solid var(--boho-terracotta); padding: 16px; border-radius: 14px; min-width: 80px; }
+    .timer-num { font-family: var(--font-en); font-size: 2.4rem; font-weight: 700; color: var(--boho-terracotta); line-height: 1; }
+    .timer-lbl { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+    footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="top-back-bar">
+    <a href="index.html" class="back-link">➔ חזרה לבחירת עיצוב</a>
+  </div>
+
+  <div id="yt-player-container"><div id="yt-audio-player"></div></div>
+
+  <div id="entrance-overlay">
+    <div class="cover-card">
+      <h1 class="cover-title">בר &amp; יוחאי</h1>
+      <p class="cover-sub">לחץ לשמיעת השיר ופתיחת ההזמנה 🎵</p>
+      <button class="cover-btn" onclick="openInvitation()">פתיחת ההזמנה</button>
+    </div>
+  </div>
+
+  <button id="audio-toggle" class="audio-btn muted" onclick="toggleAudio()">
+    <div class="sound-bars"><div class="sound-bar"></div><div class="sound-bar"></div><div class="sound-bar"></div></div>
+    <span id="audio-text">נגן מוזיקה</span>
+  </button>
+
+  <header class="hero">
+    <div class="container">
+      
+      <div class="boho-header-art">
+        <img src="boho_art.png" alt="איור בוהו שיק וטבע" />
+      </div>
+
+      <h1 class="hero-names-en">Bar &amp; Yohay</h1>
+      <h2 class="hero-names-he">בר ויטל &amp; יוחאי בוגנים</h2>
+      
+      <div class="couple-portrait-wrapper">
+        <img src="wedding_couple.jpg" alt="בר ויוחאי" />
+      </div>
+    </div>
+  </header>
+
+  <main class="invitation">
+    <div class="container">
+      
+      <p class="verse">
+        "קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה, קוֹל חָתָן וְקוֹל כַּלָּה"<br/>
+        בְּשֶׁבַח וּבְהוֹדָיָה לַבּוֹרֵא יִתְבָּרַךְ, אָנוּ נִרְגָּשִׁים לְהַזְמִין אֶתְכֶם לַחֲתוּנַת בְּנֵינוּ
+      </p>
+
+      <!-- PARENTS - LINE BREAK ON FAMILY NAMES -->
+      <div class="parents-grid">
+        <div class="parent-box">
+          <h4>הורי הכלה</h4>
+          <p>אלי &amp; טלי<br/>ויטל</p>
+        </div>
+        <div class="parent-box">
+          <h4>הורי החתן</h4>
+          <p>חיים &amp; מזל<br/>בוגנים</p>
+        </div>
+      </div>
+
+      <div class="details-box">
+        <div class="detail-item">
+          <div class="detail-title">תאריך האירוע</div>
+          <div class="detail-val">יום שני, 30/11/2026 (כ׳ בכסלו תשפ״ז)</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-title">לוח זמנים</div>
+          <div class="detail-val">19:30 קבלת פנים | 20:30 חופה וקידושין</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-title">מיקום האירוע</div>
+          <div class="detail-val">אולמי יהודה, צומת כנות</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="https://waze.com/ul?q=אולמי%20יהודה%20צומת%20כנות&navigate=yes" target="_blank" rel="noopener" class="btn-act btn-waze">ניווט ב-Waze</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=אולמי+יהודה+צומת+כנות" target="_blank" rel="noopener" class="btn-act btn-maps">Google Maps</a>
+        <a href="#" onclick="addToCalendar(event)" class="btn-act btn-cal">הוספה ליומן</a>
+      </div>
+
+    </div>
+  </main>
+
+  <section class="countdown">
+    <div class="container">
+      <h3>סופרים את הזמן לחופה</h3>
+      <div class="countdown-grid">
+        <div class="timer-card"><div class="timer-num" id="timer-days">00</div><div class="timer-lbl">ימים</div></div>
+        <div class="timer-card"><div class="timer-num" id="timer-hours">00</div><div class="timer-lbl">שעות</div></div>
+        <div class="timer-card"><div class="timer-num" id="timer-minutes">00</div><div class="timer-lbl">דקות</div></div>
+        <div class="timer-card"><div class="timer-num" id="timer-seconds">00</div><div class="timer-lbl">שניות</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>Bar &amp; Yohay — 30.11.2026</p></footer>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let ytPlayer = null; let isYtReady = false; let autoPlayQueued = false; let isPlaying = false;
+    function onYouTubeIframeAPIReady() {
+      ytPlayer = new YT.Player('yt-audio-player', {
+        height: '1', width: '1', videoId: 'vW5SqnA45Ic',
+        playerVars: { 'autoplay': 0, 'controls': 0, 'loop': 1, 'playlist': 'vW5SqnA45Ic', 'start': 6, 'playsinline': 1, 'enablejsapi': 1 },
+        events: { 'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange }
+      });
+    }
+    function onPlayerReady(event) { isYtReady = true; if (autoPlayQueued) startMusic(); }
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) { isPlaying = true; updateAudioUI(true); }
+      else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) { isPlaying = false; updateAudioUI(false); }
+    }
+    function startMusic() {
+      if (isYtReady && ytPlayer && typeof ytPlayer.playVideo === 'function') {
+        try { if (typeof ytPlayer.unMute === 'function') ytPlayer.unMute(); ytPlayer.seekTo(6, true); ytPlayer.playVideo(); isPlaying = true; updateAudioUI(true); } catch (e) { console.log(e); }
+      } else { autoPlayQueued = true; }
+    }
+    function stopMusic() { if (isYtReady && ytPlayer && typeof ytPlayer.pauseVideo === 'function') { ytPlayer.pauseVideo(); isPlaying = false; updateAudioUI(false); } }
+    function toggleAudio() { if (isPlaying) stopMusic(); else startMusic(); }
+    function updateAudioUI(active) {
+      const btn = document.getElementById('audio-toggle'); const text = document.getElementById('audio-text');
+      if (active) { btn.classList.remove('muted'); text.textContent = 'מוזיקה מופעלת'; } else { btn.classList.add('muted'); text.textContent = 'נגן מוזיקה'; }
+    }
+    function openInvitation() { document.getElementById('entrance-overlay').classList.add('hidden'); startMusic(); }
+    const weddingDate = new Date('2026-11-30T19:30:00+02:00').getTime();
+    function updateCountdown() {
+      const now = new Date().getTime(); const diff = weddingDate - now; if (diff <= 0) return;
+      document.getElementById('timer-days').textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById('timer-hours').textContent = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+      document.getElementById('timer-minutes').textContent = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      document.getElementById('timer-seconds').textContent = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000); updateCountdown();
+    function addToCalendar(e) {
+      e.preventDefault();
+      const ics = ["BEGIN:VCALENDAR","VERSION:2.0","BEGIN:VEVENT","SUMMARY:חתונה - בר ויטל & יוחאי בוגנים","DESCRIPTION:קבלת פנים: 19:30, חופה: 20:30.","LOCATION:אולמי יהודה, צומת כנות","DTSTART:20261130T173000Z","DTEND:20261130T230000Z","END:VEVENT","END:VCALENDAR"].join("\r\n");
+      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "bar-and-yohay-wedding.ics"; a.click();
+    }
+  </script>
+</body>
+</html>
