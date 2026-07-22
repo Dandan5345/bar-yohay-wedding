@@ -6,23 +6,21 @@
   <title>בר & יוחאי — בחירת עיצוב להזמנה | Bar & Yohay</title>
 
   <!-- Meta tags for social preview & SEO -->
-  <meta name="description" content="בחרו את סגנון העיצוב המועדף להזמנה של בר ויטל ויוחאי בוגנים - 10 עיצובים שונים מרהיבים." />
+  <meta name="description" content="בחרו את סגנון העיצוב המועדף להזמנה של בר ויטל ויוחאי בוגנים." />
   <meta property="og:title" content="בר & יוחאי — בחירת עיצוב להזמנה" />
-  <meta property="og:image" content="kotel_art.png" />
+  <meta property="og:image" content="wedding_couple.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@400;600;700;900&family=Bodoni+Moda:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg-cream: #FAF6F0;
-      --bg-warm: #F5EBE1;
       --text-dark: #1C1917;
       --text-muted: #78716C;
       --accent-gold: #B8860B;
-      --gold-gradient: linear-gradient(135deg, #EADBB6 0%, #C5A059 50%, #8C6F34 100%);
       --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
       --font-serif: 'Frank Ruhl Libre', serif;
       --font-sans: 'Assistant', sans-serif;
@@ -43,7 +41,7 @@
     }
 
     .container {
-      max-width: 1140px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -62,7 +60,7 @@
 
     .main-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
       font-weight: 800;
       color: var(--text-dark);
       margin-bottom: 12px;
@@ -71,15 +69,15 @@
     .subtitle {
       font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 650px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    /* GRID OF 10 DESIGNS */
+    /* GRID OF 2 SELECTED DESIGNS */
     .designs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 36px;
       margin-bottom: 60px;
     }
 
@@ -88,7 +86,7 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: var(--card-shadow);
-      border: 1px solid rgba(184, 134, 11, 0.2);
+      border: 2px solid rgba(184, 134, 11, 0.2);
       transition: all 0.35s ease;
       display: flex;
       flex-direction: column;
@@ -97,13 +95,13 @@
     }
 
     .design-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 45px rgba(184, 134, 11, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 45px rgba(184, 134, 11, 0.2);
       border-color: var(--accent-gold);
     }
 
     .card-thumb {
-      height: 240px;
+      height: 280px;
       overflow: hidden;
       position: relative;
       background: #F0E6D8;
@@ -124,19 +122,19 @@
       position: absolute;
       top: 14px;
       right: 14px;
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(8px);
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: 0.9rem;
+      font-weight: 800;
       color: var(--accent-gold);
       border: 1px solid var(--accent-gold);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .card-body {
-      padding: 24px;
+      padding: 28px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -145,17 +143,17 @@
 
     .card-title {
       font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.65rem;
+      font-weight: 800;
       color: var(--text-dark);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .card-desc {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--text-muted);
-      margin-bottom: 20px;
-      line-height: 1.5;
+      margin-bottom: 24px;
+      line-height: 1.6;
     }
 
     .btn-preview {
@@ -166,10 +164,11 @@
       background: var(--text-dark);
       color: #FFFFFF;
       font-weight: 700;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border-radius: 50px;
       transition: background 0.3s ease;
       text-align: center;
+      font-size: 1.05rem;
     }
 
     .design-card:hover .btn-preview {
@@ -192,26 +191,11 @@
     <header class="header-section">
       <div class="header-badge">בר ויטל &amp; יוחאי בוגנים</div>
       <h1 class="main-title">בחירת עיצוב להזמנה</h1>
-      <p class="subtitle">הכנו 10 סגנונות עיצוב מרהיבים וייחודיים עם איורים מיוחדים. לחצו על העיצוב האהוב עליכם לצפייה בהזמנה המלאה עם המוזיקה!</p>
+      <p class="subtitle">בחרו את העיצוב המועדף עליכם לצפייה בהזמנה המלאה עם המוזיקה!</p>
     </header>
 
     <div class="designs-grid">
       
-      <!-- Design 1: Classic Floral -->
-      <a href="design-floral.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">🌸 פרחוני קלאסי</span>
-          <img src="floral_art.png" alt="עיצוב פרחים קלאסי" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">1. עיצוב פרחים קלאסי</h3>
-            <p class="card-desc">עיצוב פרחוני רומנטי עם איורי שושנים ורודות, עלים מוזהבים ורקע נייר שנהב יוקרתי.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
       <!-- Design 2: Western Wall Kotel -->
       <a href="design-kotel.html" class="design-card">
         <div class="card-thumb">
@@ -220,8 +204,8 @@
         </div>
         <div class="card-body">
           <div>
-            <h3 class="card-title">2. עיצוב הכותל המערבי</h3>
-            <p class="card-desc">איור בצבעי מים אומנותיים של הכותל המערבי בירושלים באור שקיעה מוזהב ומרגש.</p>
+            <h3 class="card-title">1. עיצוב הכותל המערבי</h3>
+            <p class="card-desc">עיצוב מרגש עם טפט רקע מוזהב ואומנותי של הכותל המערבי בירושלים ותמונת הזוג האמיתית.</p>
           </div>
           <div class="btn-preview">צפייה בהזמנה ➔</div>
         </div>
@@ -235,113 +219,8 @@
         </div>
         <div class="card-body">
           <div>
-            <h3 class="card-title">3. אדיטוריאלי מודרני</h3>
-            <p class="card-desc">סגנון נקי, מינימליסטי ויוקרתי בסגנון מגזין אופנה (Vogue Style) עם איור אופנתי שנון.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
-      <!-- Design 4: Champagne Gold -->
-      <a href="design-gold.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">👑 שמפניה וזהב</span>
-          <img src="gold_art.png" alt="עיצוב שמפניה וזהב" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">4. שמפניה וזהב מלכותי</h3>
-            <p class="card-desc">עיצוב מלכותי בגווני שמפניה וזהב נוצץ עם סמל כתר חגיגי ועיטורים קלאסיים.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
-      <!-- Design 5: Sunset Beach -->
-      <a href="design-beach.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">🌅 זריחה וחוף ים</span>
-          <img src="beach_art.png" alt="עיצוב חוף ים" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">5. חוף ים וזריחה</h3>
-            <p class="card-desc">איור בצבעי מים רומנטי, חם ופסטורלי של חוף ים מוזהב ושקיעה קסומה.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
-      <!-- Design 6: Urban Chic -->
-      <a href="design-urban.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">🏙️ אורבני שיק</span>
-          <img src="urban_art.png" alt="עיצוב אורבני שיק" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">6. אורבני שיק</h3>
-            <p class="card-desc">עיצוב אורבני עכשווי, נקי ומתוחכם עם איור קווי (Line Art) מוזהב ועדין.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
-      <!-- Design 7: Jerusalem Vineyard -->
-      <a href="design-vineyard.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">🍇 כרם וגפנים</span>
-          <img src="vineyard_art.png" alt="עיצוב כרם וגפנים" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">7. כרם וגפנים בהרי ירושלים</h3>
-            <p class="card-desc">איור מרהיב בצבעי מים של כרם גפנים מוזהב ועצי זית בהרי ירושלים הקסומים.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
-      <!-- Design 8: Jerusalem of Gold -->
-      <a href="design-jerusalem.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">🕊️ ירושלים של זהב</span>
-          <img src="jerusalem_art.png" alt="עיצוב ירושלים של זהב" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">8. ירושלים של זהב</h3>
-            <p class="card-desc">איור מרגש של נוף ירושלים המוזהבת, ענפי זית ויוני שלום באווירה חגיגית וטהורה.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
-      <!-- Design 9: Boho Chic Botanical -->
-      <a href="design-boho.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">🌿 בוהו שיק וטבע</span>
-          <img src="boho_art.png" alt="עיצוב בוהו שיק" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">9. בוהו שיק וטבע</h3>
-            <p class="card-desc">קשת חופה בסגנון בוהמי עם עשבי פמפס, עלי דקל יבשים וגווני טרקוטה פסטורליים.</p>
-          </div>
-          <div class="btn-preview">צפייה בהזמנה ➔</div>
-        </div>
-      </a>
-
-      <!-- Design 10: Starry Night -->
-      <a href="design-starry.html" class="design-card">
-        <div class="card-thumb">
-          <span class="tag-badge">✨ ליל כוכבים וגן קסום</span>
-          <img src="starry_art.png" alt="עיצוב ליל כוכבים" />
-        </div>
-        <div class="card-body">
-          <div>
-            <h3 class="card-title">10. ליל כוכבים וגן קסום</h3>
-            <p class="card-desc">גן אירועים קסום מוארת באורות זהב קטנים תחת שמי ליל כוכבים רומנטי במינו.</p>
+            <h3 class="card-title">2. אדיטוריאלי מודרני (Vogue)</h3>
+            <p class="card-desc">סגנון נקי, מינימליסטי ויוקרתי בסגנון מגזין אופנה (Vogue) המציג את תמונת הזוג בשער יוקרתי.</p>
           </div>
           <div class="btn-preview">צפייה בהזמנה ➔</div>
         </div>
