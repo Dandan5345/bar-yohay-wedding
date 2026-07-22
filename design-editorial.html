@@ -7,7 +7,7 @@
 
   <!-- Meta tags -->
   <meta name="description" content="הזמנה לחתונה של בר ויטל ויוחאי בוגנים - 30/11/26 באולמי יהודה צומת כנות" />
-  <meta property="og:image" content="editorial_art.png" />
+  <meta property="og:image" content="wedding_couple.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-sans); background-color: var(--bg-editorial); color: var(--text-dark); line-height: 1.8; }
-    .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
     .top-back-bar {
       background: rgba(245, 242, 236, 0.95); backdrop-filter: blur(10px);
@@ -70,13 +70,12 @@
     .vogue-magazine-header { font-family: var(--font-bodoni); font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 700; text-transform: uppercase; letter-spacing: 8px; color: var(--text-dark); line-height: 1; margin-bottom: 10px; }
     .vogue-sub-issue { font-family: var(--font-bodoni); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 3px; color: var(--vogue-gold); margin-bottom: 30px; }
 
-    .editorial-spread {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;
+    /* SINGLE REAL COUPLE PHOTO IN ELEGANT VOGUE FRAME */
+    .vogue-cover-photo {
+      max-width: 520px; margin: 0 auto 30px; border: 1px solid var(--text-dark); padding: 10px; background: #FFF;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
-    @media (max-width: 650px) { .editorial-spread { grid-template-columns: 1fr; } }
-
-    .spread-img-box { border: 1px solid var(--text-dark); padding: 8px; background: #FFF; }
-    .spread-img-box img { width: 100%; height: 440px; object-fit: cover; display: block; }
+    .vogue-cover-photo img { width: 100%; height: 560px; object-fit: cover; object-position: center 20%; display: block; }
 
     .hero-names-he { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; color: var(--text-dark); margin-bottom: 24px; }
 
@@ -142,14 +141,9 @@
       <div class="vogue-magazine-header">VOGUE</div>
       <div class="vogue-sub-issue">THE WEDDING ISSUE — NOVEMBER 30, 2026</div>
 
-      <!-- EDITORIAL SPREAD -->
-      <div class="editorial-spread">
-        <div class="spread-img-box">
-          <img src="editorial_art.png" alt="איור אדיטוריאלי" />
-        </div>
-        <div class="spread-img-box">
-          <img src="wedding_couple.jpg" alt="בר ויוחאי" />
-        </div>
+      <!-- SINGLE ELEGANT REAL COUPLE PHOTO COVER -->
+      <div class="vogue-cover-photo">
+        <img src="wedding_couple.jpg" alt="בר ויוחאי" />
       </div>
 
       <h1 class="hero-names-he">בר ויטל &amp; יוחאי בוגנים</h1>
